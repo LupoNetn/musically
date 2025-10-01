@@ -37,7 +37,7 @@ const AppLayout = () => {
       </div>
 
       {/* Main layout takes remaining height */}
-      <main className="flex-1 bg-gray-100 p-4 overflow-hidden">
+      <main className="flex-1 bg-gray-100 overflow-hidden">
         <div className="md:grid md:grid-cols-9 gap-3 h-full">
           {/* Left Sidebar (scrollable independently) */}
           <div className="hidden md:block md:col-span-2 h-full overflow-y-auto pr-2 scrollbar-hide">
