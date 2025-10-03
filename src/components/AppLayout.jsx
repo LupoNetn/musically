@@ -29,15 +29,9 @@ const navLinks = [
 
 const AppLayout = () => {
   const location = useLocation();
-  const isSignedIn = false;
-  const navigate = useNavigate();
+ 
 
-  useEffect(() => {
-    if (!isSignedIn) {
-      navigate("/auth");
-    }
-  }, [isSignedIn, navigate]);
-
+ 
   return (
     <div className="h-screen flex flex-col pt-9">
       {/* Navbar (fixed height at top) */}
