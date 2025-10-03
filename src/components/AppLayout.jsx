@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import { Home, MessageCircle, Settings, Users } from "lucide-react";
-import { Outlet, NavLink, useLocation } from "react-router";
+import { Outlet, useLocation, useNavigate } from "react-router";
 import {
   DesktopProfileCard,
   DesktopFavoritesCard,
 } from "./DesktopLeftComponents";
+import MobileNav from "./MobileNav";
 
 const navLinks = [
   { name: "Home", link: "/", icon: <Home className="w-6 h-6" /> },
@@ -28,9 +29,17 @@ const navLinks = [
 
 const AppLayout = () => {
   const location = useLocation();
+  const isSignedIn = false;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isSignedIn) {
+      navigate("/auth");
+    }
+  }, [isSignedIn, navigate]);
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col pt-9">
       {/* Navbar (fixed height at top) */}
       <div className="p-4">
         <Navbar />
@@ -44,7 +53,6 @@ const AppLayout = () => {
             <div className="flex flex-col gap-4">
               <DesktopProfileCard />
               <DesktopFavoritesCard />
-              {/* You can add more cards here */}
             </div>
           </div>
 
@@ -79,31 +87,7 @@ const AppLayout = () => {
       </main>
 
       {/* Mobile Navigation (fixed bottom) */}
-      <footer className="md:hidden fixed bottom-0 inset-x-0 bg-gray-100 p-2 shadow-lg rounded-full">
-        <nav>
-          <ul className="flex items-center justify-between max-w-md mx-auto">
-            {navLinks.map((link) => (
-              <li key={link.name} className="flex-1">
-                <NavLink
-                  to={link.link}
-                  className={({ isActive }) =>
-                    `flex flex-col items-center justify-center gap-1 py-1 transition-colors ${
-                      isActive
-                        ? "text-blue-600 font-semibold"
-                        : "text-gray-500 hover:text-blue-500"
-                    }`
-                  }
-                >
-                  {link.icon}
-                  <span className="text-xs truncate">
-                    {link.link === location.pathname ? link.name : ""}
-                  </span>
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </footer>
+      <MobileNav />
     </div>
   );
 };

@@ -107,9 +107,10 @@ const Home = () => {
           {/* Input field */}
           <div className="bg-gray-100 relative rounded-lg w-full max-w-2xl">
             <input
-              className="w-full pl-3 pr-16 py-3 outline-none bg-transparent rounded-lg text-sm sm:text-base"
+              className="w-full pl-3 pr-16 py-3 outline-none bg-transparent rounded-lg text-sm sm:text-base placeholder:text-xs"
               type="text"
-              placeholder="Share Your Fav songs..."
+              placeholder="quickly share ur fav jam!..."
+              
             />
             {/* Icons inside input */}
             <div className="absolute inset-y-0 right-3 flex items-center gap-2 text-gray-500">

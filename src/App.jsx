@@ -7,6 +7,9 @@ import Messages from "./pages/Messages";
 import Notifications from "./pages/Notifications";
 import Settings from "./pages/Settings";
 import AppLayout from "./components/AppLayout";
+import AuthLayout from "./components/AuthLayout";
+import SignIn from "./components/SignIn";
+import LogIn from "./components/LogIn";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +36,14 @@ const router = createBrowserRouter([
         path: "settings",
         element: <Settings />,
       },
+    ],
+  },
+  {
+    path: "/auth",
+    element: <AuthLayout />,
+    children: [
+      { index: true, element: <SignIn /> },
+      { path: "/auth/login", element: <LogIn /> },
     ],
   },
 ]);
