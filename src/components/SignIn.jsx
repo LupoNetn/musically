@@ -8,7 +8,7 @@ const SignIn = () => {
 
   return (
     <div className="flex items-center justify-center bg-gradient-to-br from-purple-500 to-indigo-600">
-      <div className="bg-white rounded-3xl shadow-xl p-4 md:p-10 max-w-md w-full text-center text-left">
+      <div className="bg-white rounded-3xl shadow-xl p-4 md:p-10 max-w-md w-full text-left">
         <h1 className="text-3xl font-extrabold text-gray-800">Welcome Back</h1>
         <p className="mt-4 text-gray-600 text-sm">
           Sign in with Spotify to join millions of music lovers worldwide.

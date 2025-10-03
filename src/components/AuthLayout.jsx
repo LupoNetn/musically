@@ -13,7 +13,7 @@ const AuthLayout = () => {
 
       <main className="flex-1 flex flex-col sm:flex-row relative">
         {/* Left Gradient Section */}
-        <div className="relative z-10 w-full sm:w-[450px] lg:w-[600px] h-[220px] sm:h-screen overflow-y-clip flex items-center justify-center">
+        <div className="relative z-10 w-full sm:w-[450px] lg:w-[600px] h-[220px] sm:h-screen overflow-x-hidden overflow-y-clip flex items-center justify-center">
           {/* Main gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500 via-pink-500 to-indigo-600 bg-[length:200%_200%] animate-gradient-x"></div>
 
