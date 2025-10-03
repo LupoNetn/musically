@@ -27,7 +27,7 @@ const AuthLayout = () => {
         </div>
 
         {/* Right form section */}
-        <div className="flex-1 absolute z-20 -bottom-5 sm:bottom-10 lg:bottom-25 lg:left-10 flex items-center justify-center p-6 mx-auto w-full">
+        <div className="flex-1 absolute z-20 -top-7 sm:bottom-10 lg:bottom-25 lg:left-10 flex items-center justify-center p-6 mx-auto w-full">
           <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-4 mb-10">
             <Outlet />
           </div>
